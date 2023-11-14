@@ -29,3 +29,25 @@ char *read_line(void)
 
 	return (input_line);
 }
+
+/**
+* read_and_increment - Read a line of input and increment line number
+*
+* @status: Current exit status
+* @line_number: Current line number
+*
+* Return: The input line
+*/
+char *read_and_increment(int *status, int *line_number)
+{
+	char *input_line = read_line();
+
+	if (input_line == NULL)
+	{
+		*status = *status;
+		return (NULL);
+	}
+
+	(*line_number)++;
+	return (input_line);
+}
